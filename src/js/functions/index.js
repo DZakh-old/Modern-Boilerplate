@@ -1,2 +1,4 @@
-import './real-vh-height';
-import './smooth-scroll-to';
+import realVhHeight from './real-vh-height';
+import activateSmothScroll from './smooth-scroll-to';
+
+export default { realVhHeight, activateSmothScroll };

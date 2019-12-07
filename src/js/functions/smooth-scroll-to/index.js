@@ -6,7 +6,7 @@ const smoothScrollTo = elementId => {
   });
 };
 
-(function processInnerLinkClick() {
+const activateSmoothScroll = () => {
   const links = document.querySelectorAll('.smooth-scroll-to');
   links.forEach(link => {
     link.addEventListener('click', element => {
@@ -15,4 +15,6 @@ const smoothScrollTo = elementId => {
       smoothScrollTo(element.target.dataset.id);
     });
   });
-})();
+};
+
+export default activateSmoothScroll;

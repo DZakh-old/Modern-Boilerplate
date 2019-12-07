@@ -6,11 +6,7 @@ function correctSizing() {
 
 function firstViewportCorrection() {
   /* If mobile */
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     correctSizing();
     window.addEventListener('orientationchange', () => {
       const afterOrientationChange = () => {
@@ -22,4 +18,6 @@ function firstViewportCorrection() {
   }
 }
 
-setTimeout(firstViewportCorrection(), 0);
+const realVhHeight = () => setTimeout(firstViewportCorrection(), 0);
+
+export default realVhHeight;
