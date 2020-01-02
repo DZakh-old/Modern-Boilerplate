@@ -1,5 +1,5 @@
-// Use v(bg-color) to get var(--bg-color)
-// Use v-get(bg-color) to get $bg-color
+// Use v(some-clr) to get var(--some-clr)
+// Use v-get(some-clr) to get $some-clr
 // Use v-init to initialize css variables
 $v-globals: (
 
