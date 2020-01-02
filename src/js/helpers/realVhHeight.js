@@ -18,6 +18,4 @@ function firstViewportCorrection() {
   }
 }
 
-const realVhHeight = () => setTimeout(firstViewportCorrection(), 0);
-
-export default realVhHeight;
+export const activateRealVhHeight = () => setTimeout(firstViewportCorrection(), 0);

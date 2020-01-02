@@ -3,10 +3,18 @@ export default class Ajax {
     this.url = url;
   }
 
-  async get() {
+  async get(headers = {}) {
     try {
-      const res = await fetch(this.url);
-      return res.json();
+      const res = await fetch(this.url, {
+        method: 'GET',
+        headers
+      });
+      const { status } = res;
+      if (status !== 200) {
+        return { status };
+      }
+      const data = await res.json();
+      return { status, ...data };
     } catch (err) {
       throw new Error(err);
     }
