@@ -1,7 +1,4 @@
+/* eslint-disable */
 module.exports = {
-  plugins: [
-    require('autoprefixer')({
-      grid: true
-    })
-  ]
-}
+  plugins: [require('postcss-preset-env')({})]
+};
