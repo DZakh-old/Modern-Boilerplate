@@ -1,5 +1,3 @@
-import './stylesheets/main.scss';
-
 import '@babel/polyfill';
 
 import './js/packages/lazysizes';
@@ -7,9 +5,11 @@ import './js/packages/lazysizes';
 import { activateRealVhHeight } from './js/helpers/realVhHeight';
 import { activateSmoothScroll } from './js/helpers/smoothScrollTo';
 
-import { activateInterface } from './js/handlers/interfaceHandler';
+import { renderHtmlInApp } from './js/handlers/appHandler';
 
 activateRealVhHeight();
 activateSmoothScroll();
 
-activateInterface();
+const greeting = '<h1>Hello World!</h1>';
+
+renderHtmlInApp(greeting);
