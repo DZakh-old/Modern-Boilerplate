@@ -2,8 +2,8 @@ import '@babel/polyfill';
 
 import './js/packages/lazysizes';
 
-import { activateRealVhHeight } from './js/helpers/realVhHeight';
-import { activateSmoothScroll } from './js/helpers/smoothScrollTo';
+import { activateRealVhHeight } from './js/functions/realVhHeight';
+import { activateSmoothScroll } from './js/functions/smoothScrollTo';
 
 import { renderHtmlInApp } from './js/handlers/appHandler';
 
