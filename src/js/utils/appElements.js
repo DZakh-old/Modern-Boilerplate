@@ -1,4 +1,5 @@
 const elementsAndTheirIdsFromTemplate = {
+  page: 'page',
   app: 'app'
   // Add elements for js here
 };

@@ -11,8 +11,8 @@ export const activateSmoothScroll = () => {
   const links = document.querySelectorAll('[data-smooth-scroll-to]');
 
   links.forEach(link => {
-    link.addEventListener('click', () => {
-      smoothScrollTo(link.dataset.smoothScrollTo);
+    link.addEventListener('click', e => {
+      smoothScrollTo(e.currentTarget.dataset.smoothScrollTo);
     });
   });
 };
