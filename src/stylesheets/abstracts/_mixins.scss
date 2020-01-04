@@ -42,6 +42,23 @@
   }
 }
 
+/// Making container
+@mixin container {
+  max-width: v(max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+
+  @each $breakpoint, $value in $breakpoints {
+    @include respond-above($breakpoint) {
+      padding: 0;
+      width: calc(#{$value} - 2em);
+    }
+  }
+}
+
 /// Works in tandem with the real-vh-height.js function to display sections correctly on mobiles
 /// @param {Number} $height
 @mixin real-vh-height($height: 100) {

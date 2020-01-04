@@ -2,19 +2,10 @@
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 
-.container {
-  max-width: v(max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
 
-.darkmode {
+.dark-mode {
   @include v-init((/* Some darkmode colors */));
 }
