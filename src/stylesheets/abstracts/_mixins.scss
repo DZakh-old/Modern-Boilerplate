@@ -43,19 +43,19 @@
 }
 
 /// Making container
-@mixin container {
+@mixin container($side-size: 1em) {
   max-width: v(max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: $side-size;
+  padding-right: $side-size;
   width: 100%;
 
   @each $breakpoint, $value in $breakpoints {
     @include respond-above($breakpoint) {
-      padding-left: 1em;
-      padding-right: 1em;
-      width: $value;
+      padding-left: $side-size;
+      padding-right: $side-size;
+      width: calc(#{$value} - 2 * #{$side-size});
     }
   }
 }
