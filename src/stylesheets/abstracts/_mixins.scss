@@ -53,8 +53,9 @@
 
   @each $breakpoint, $value in $breakpoints {
     @include respond-above($breakpoint) {
-      padding: 0;
-      width: calc(#{$value} - 2em);
+      padding-left: 1em;
+      padding-right: 1em;
+      width: $value;
     }
   }
 }
