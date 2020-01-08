@@ -1,3 +1,5 @@
+import { getOffsetTop } from '../helpers/getOffsetTop';
+
 const smoothScrollTo = elementId => {
   const el = document.getElementById(elementId);
 
@@ -6,7 +8,7 @@ const smoothScrollTo = elementId => {
   const extraSpace = 0;
 
   window.scroll({
-    top: el.offsetTop - extraSpace,
+    top: getOffsetTop(el) - extraSpace,
     behavior: 'smooth',
   });
 };
