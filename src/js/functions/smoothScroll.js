@@ -1,9 +1,13 @@
 const smoothScrollTo = elementId => {
-  const e = document.getElementById(elementId);
+  const el = document.getElementById(elementId);
 
-  e.scrollIntoView({
-    block: 'start',
-    behavior: 'smooth'
+  // It's usefull when you have some fixed header
+  // const extraSpace = headerElement.offsetHeight;
+  const extraSpace = 0;
+
+  window.scroll({
+    top: el.offsetTop - extraSpace,
+    behavior: 'smooth',
   });
 };
 
