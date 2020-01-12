@@ -3,7 +3,7 @@ export const Ajax = {
     try {
       const res = await fetch(url, {
         method: 'GET',
-        headers
+        headers,
       });
       const { status } = res;
 
@@ -24,7 +24,7 @@ export const Ajax = {
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
       });
 
       return res.json();
@@ -46,7 +46,7 @@ export const Ajax = {
   deleteById: async (url, id) => {
     try {
       const res = await fetch(`${url}/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
       });
 
       return res.json();
@@ -60,12 +60,12 @@ export const Ajax = {
       const res = await fetch(`${url}/${id}`, {
         method: 'PATCH',
         body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
       });
 
       return res.json();
     } catch (err) {
       throw new Error(err);
     }
-  }
+  },
 };

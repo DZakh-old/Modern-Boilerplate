@@ -1,6 +1,6 @@
 import { renderHtmlInContainer } from '../helpers/renderHelpers';
 
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 const { app } = elements;
 
