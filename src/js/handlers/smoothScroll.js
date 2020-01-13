@@ -1,4 +1,8 @@
+import smoothscroll from 'smoothscroll-polyfill';
+
 import { getOffsetTop } from '../helpers/getOffsetTop';
+
+smoothscroll.polyfill();
 
 const smoothScrollTo = elementId => {
   const el = document.getElementById(elementId);
