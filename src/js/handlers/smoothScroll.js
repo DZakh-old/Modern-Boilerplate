@@ -1,28 +1,45 @@
 import smoothscroll from 'smoothscroll-polyfill';
 
-import { getOffsetTop } from '../helpers/getOffsetTop';
+import { elements } from '../utils/elements';
 
 smoothscroll.polyfill();
 
-const smoothScrollTo = elementId => {
-  const el = document.getElementById(elementId);
+const { mastheadElement } = elements;
 
-  // It's usefull when you have some fixed header
-  // const extraSpace = headerElement.offsetHeight;
-  const extraSpace = 0;
+const prepareSmoothScroll = linkEl => {
+  const destinationEl = document.getElementById(linkEl.dataset.smoothScrollTo);
+  const blockOption = linkEl.dataset.smoothScrollBlock || 'start';
 
-  window.scroll({
-    top: getOffsetTop(el) - extraSpace,
-    behavior: 'smooth',
-  });
+  if (blockOption === 'start') {
+    const EXTRA_OFFSET = mastheadElement.offsetHeight - 3;
+
+    const anchorEl = document.createElement('div');
+
+    destinationEl.setAttribute('style', 'position: relative;');
+    anchorEl.setAttribute('style', `position: absolute; top: -${EXTRA_OFFSET}px; left: 0;`);
+
+    destinationEl.appendChild(anchorEl);
+
+    linkEl.addEventListener('click', () => {
+      anchorEl.scrollIntoView({
+        block: blockOption,
+        behavior: 'smooth',
+      });
+    });
+  }
+
+  if (blockOption === 'center') {
+    linkEl.addEventListener('click', () => {
+      destinationEl.scrollIntoView({
+        block: blockOption,
+        behavior: 'smooth',
+      });
+    });
+  }
 };
 
 export const activateSmoothScroll = () => {
-  const links = document.querySelectorAll('[data-smooth-scroll-to]');
+  const linkEls = [...document.querySelectorAll('[data-smooth-scroll-to]')];
 
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      smoothScrollTo(e.currentTarget.dataset.smoothScrollTo);
-    });
-  });
+  linkEls.forEach(linkEl => prepareSmoothScroll(linkEl));
 };
