@@ -1,18 +1,14 @@
 import smoothscroll from 'smoothscroll-polyfill';
 
-import { elements } from '../utils/elements';
-
 smoothscroll.polyfill();
 
-const { mastheadElement } = elements;
-
 const prepareSmoothScroll = linkEl => {
+  const EXTRA_OFFSET = 0;
+
   const destinationEl = document.getElementById(linkEl.dataset.smoothScrollTo);
   const blockOption = linkEl.dataset.smoothScrollBlock || 'start';
 
-  if (blockOption === 'start') {
-    const EXTRA_OFFSET = mastheadElement.offsetHeight - 3;
-
+  if ((blockOption === 'start' || blockOption === 'end') && EXTRA_OFFSET) {
     const anchorEl = document.createElement('div');
 
     destinationEl.setAttribute('style', 'position: relative;');
@@ -28,7 +24,7 @@ const prepareSmoothScroll = linkEl => {
     });
   }
 
-  if (blockOption === 'center') {
+  if (blockOption === 'center' || !EXTRA_OFFSET) {
     linkEl.addEventListener('click', () => {
       destinationEl.scrollIntoView({
         block: blockOption,
