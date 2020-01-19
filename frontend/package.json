@@ -9,7 +9,7 @@
     "build": "parcel build ./src/index.html --public-url ./"
   },
   "keywords": [],
-  "author": "Dmitry Zakh <dzakh.dev@gmail.com> (https://dzakh.dev/)",
+  "author": "Dmitry Zakharov <dzakh.dev@gmail.com> (https://dzakh.dev/)",
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
