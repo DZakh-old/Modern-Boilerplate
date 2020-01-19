@@ -1,0 +1,32 @@
+{
+  "name": "placeholder-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "env NODE_ENV=development nodemon ./app/server.js",
+    "prod": "env NODE_ENV=production nodemon ./app/server.js"
+  },
+  "keywords": [],
+  "author": "Dmitry Zakharov <dzakh.dev@gmail.com> (https://dzakh.dev/)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.18.2"
+  }
+}
