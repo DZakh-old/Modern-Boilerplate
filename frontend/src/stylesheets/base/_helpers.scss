@@ -2,10 +2,6 @@
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 
-.overflow-hidden {
+.js-overflow-hidden {
   overflow: hidden;
-}
-
-.dark-mode {
-  @include v-init((/* Some darkmode colors */));
 }

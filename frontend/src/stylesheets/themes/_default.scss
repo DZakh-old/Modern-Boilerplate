@@ -2,3 +2,19 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
+
+:root,
+[data-theme='default'] {
+  /* Background colors */
+  @include defineColorHSL(--color-bg-darker, 0, 10%, 0%);
+  @include defineColorHSL(--color-bg-dark, 0, 10%, 7%);
+  @include defineColorHSL(--color-bg, 0, 10%, 12%);
+  @include defineColorHSL(--color-bg-light, 0, 10%, 16%);
+  /* Primary colors */
+  @include defineColorHSL(--color-primary-dark, 4, 97%, 25%);
+  @include defineColorHSL(--color-primary, 4, 90%, 60%);
+  @include defineColorHSL(--color-primary-light, 4, 95%, 73%);
+  /* Contrast colors */
+  @include defineColorHSL(--color-contrast, 0, 0%, 100%);
+  @include defineColorHSL(--color-contrast-weird, 44, 91%, 75%);
+}
