@@ -9,7 +9,5 @@ export const toggleAppState = () => {
 export const isAppActive = () => !!app.classList.contains('active');
 
 export const renderHtmlInApp = html => {
-  console.log(html);
-  console.log(app);
   renderHtmlInContainer(html, app);
 };
