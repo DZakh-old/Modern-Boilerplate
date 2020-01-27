@@ -13,9 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
-    "lazysizes": "^5.1.2",
-    "normalize.css": "^8.0.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.3",
